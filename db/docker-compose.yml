@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+    mysql:
+        image: 'mysql:8.0'
+        container_name: mysql
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_DATABASE: lambda_node_mysql_docker
+            MYSQL_USER: db_user
+            MYSQL_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+        volumes:
+            - ./database:/var/lib/mysql
+        networks:
+            - lambda-node-mysql-docker
+
+networks:
+    lambda-node-mysql-docker:
+        name: lambda-node-mysql-docker
