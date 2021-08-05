@@ -22,6 +22,10 @@ DB_PORT=3306
 - Import dummy data `db.sql`
 - Install Dependcies
 ```sh
+npm i
+```
+- Deploy for local
+```sh
 npm run deploy
 ```
 After deploy you will see `API` routes
