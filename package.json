@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "deploy": "serverless offline",
-    "api:list": "serverless invoke local -f list",
-    "api:add": "serverless invoke local -f add"
+    "api:list": "serverless invoke local -f list --path=app/test/event.js",
+    "api:show": "serverless invoke local -f show --path=app/test/event.js",
+    "api:add": "serverless invoke local -f add --path=app/test/event.js",
+    "api:delete": "serverless invoke local -f destroy --path=app/test/event.js"
   },
   "keywords": [],
   "author": "",

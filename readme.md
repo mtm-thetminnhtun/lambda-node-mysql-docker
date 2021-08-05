@@ -36,7 +36,9 @@ POST | http://localhost:3000/dev/todos
 
 ## Testing
 
-**HTTP**
+### HTTP
+
+**List todos**
 - Route - [GET] http://localhost:3000/dev/todos
 - Result
 ```json
@@ -48,9 +50,24 @@ POST | http://localhost:3000/dev/todos
     {
         "id": 2,
         "title": "Buy Egg"
-    }
+    },
+    ...
 ]
 ```
+
+**Single Todo**
+- Route - [GET] http://localhost:3000/dev/todos/{id}
+- Result
+```json
+[
+    {
+        "id": 1,
+        "title": "Go shop"
+    },
+]
+```
+
+**Create Todo**
 - Route - [POST] http://localhost:3000/dev/todos
 - Result
 ```json
@@ -64,14 +81,38 @@ POST | http://localhost:3000/dev/todos
 }
 ```
 
-**CLI**
+**Delete Todo**
+- Route - [DELETE] http://localhost:3000/dev/todos
+- Result
+```json
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "info": "",
+    "serverStatus": 2,
+    "warningStatus": 0
+}
+```
 
-- List
+### CLI
+
+**List**
 ```sh
 npm run api:list
 ```
 
-- Add
+**Single**
+```sh
+npm run api:show
+```
+
+**Create**
+```sh
+npm run api:add
+```
+
+**Delete**
 ```sh
 npm run api:add
 ```

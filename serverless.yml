@@ -20,10 +20,24 @@ functions:
                   path: todos
                   method: get
                   cors: true
+    show:
+        handler: app/index.show
+        events:
+            - http:
+                  path: todos/{id}
+                  method: get
+                  cors: true
     add:
         handler: app/index.add
         events:
             - http:
                   path: todos
                   method: post
+                  cors: true
+    destroy:
+        handler: app/index.destroy
+        events:
+            - http:
+                  path: todos/{id}
+                  method: delete
                   cors: true
